@@ -1,0 +1,17 @@
+items=c("cards","stamps","photos","pens","cars","ticket","cards","books","books","stamps","coins","photos","tickets","coins","coins","books","stamps","coins","books","stamps","cards","souvenirs","socks","stamps","cards") 
+quantity=c(100,212,454,6000,12,765,537,1000,1001,444,99,89,301,672,102,444,100,766,1001,102,102,530,828,2006,6202)
+price=c(10000,848,4540,12000,120000,4932,49327,9090,2377,9090,100000,10000,400,99993,93999,8929,800,200,10001,4440,4440,1060,4006,100000,9000)
+collection=data.frame(items,quantity,price) 
+fivenum(collection$quantity)
+mean(collection$quantity)
+sd(collection$quantity)
+fivenum(collection$price)
+sd(collection$price)
+barplot(table(collection$items))
+hist(collection$quantity,main="Histogram of quantity")
+boxplot(collection$price,horizontal=T)
+barplot(table(collection$price,collection$items))
+barplot(table(collection$quantity,collection$items))
+plot(collection$price,collection$quantity) 
+collection[quantity==max(quantity),]
+collection[price==max(price),]

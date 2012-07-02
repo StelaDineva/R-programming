@@ -1,0 +1,9 @@
+library(UsingR)
+CLT=function(n=100){
+	sexp=sum(rexp(n/2,1))
+	snorm=sum(rnorm(n/2,1,1))
+	((sexp+snorm)/n-1)*sqrt(n)
+}
+x=simple.sim(1000,CLT)
+hist(x,prob=T)
+curve(dnorm(x),add=T)
